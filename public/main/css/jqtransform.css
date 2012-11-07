@@ -1,5 +1,5 @@
 /* ===========================forms======================== */
-.form1Holder{width: 100%;padding: 40px 0 0 1px;height: 357px;position: relative;display: block;}
+.form1Holder{width: 100%;padding: 40px 0 0 1px;height: 367px;position: relative;display: block;}
 #form1{
 	text-transform: none;
 	width: 100%;
@@ -149,7 +149,7 @@ cursor: pointer;
 	height: 18px;
 	overflow: hidden;
 	cursor:pointer;
-	padding: 3px 9px;
+	padding: 3px 18px;
 	color: #000;
 }
 .jqTransformSelectWrapper  a.jqTransformSelectOpen {

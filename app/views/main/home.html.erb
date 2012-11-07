@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -26,25 +26,26 @@
 <body>
     <div id="glob">
         <div class="spinner"></div>
+		
         <!-- CONTENT -->
         <section id="content">
             <div id="splash">
-                <h1><a href="#!/page_home">horizon your travel guide</a></h1>
+                <h1><a href="#!/page_home">קדברה</a></h1>
                 <!-- MENU -->
                 <nav class="menu">
                     <ul id="menu">
-                        <li class="no_disp"><a href="#!/page_home">Home</a><strong></strong><span></span><em></em></li>
-                        <li class="with_ul"><a href="#!/page_about">About us</a><strong></strong><span></span><em></em>
+                        <li class="no_disp"><a href="#!/page_home">קדברה</a><strong></strong><span></span><em></em></li>
+                        <li class="with_ul"><a href="#!/page_about">אודות</a><strong></strong><span></span><em></em>
                             <ul class="submenu_1">
-                                <li><a href="#!/page_more1">our staff</a></li>                                
-                                <li><a href="#!/page_more1">news</a></li>             				    
-                                <li><a href="#!/page_more1">services</a></li>
+                                <li><a href="#!/page_more1">צוות שלנו</a></li>                                
+                                <li><a href="#!/page_more1">חדשות</a></li>             				    
+                                <li><a href="#!/page_more1">שרותים</a></li>
                				</ul>
                         </li>
-                        <li><a href="#!/page_tours">Our tours</a><strong></strong><span></span><em></em></li>
-                        <li><a href="#!/page_hotels">Hotels</a><strong></strong><span></span><em></em></li>
-                        <li><a href="#!/page_mail">Contacts</a><strong></strong><span></span><em></em></li>
-                        <li><a href="#!/page_reservation">Reservation</a><strong></strong><span></span><em></em></li>
+                        <li><a href="#!/page_tours">חבילות</a><strong></strong><span></span><em></em></li>
+                        <li><a href="#!/page_hotels">בתי מלון</a><strong></strong><span></span><em></em></li>
+                        <li><a href="#!/page_mail">אנשי קשר</a><strong></strong><span></span><em></em></li>
+                        <li><a href="#!/page_reservation">הזמנות</a><strong></strong><span></span><em></em></li>
                 	</ul>
            	    </nav>
                 <!-- END MENU -->
@@ -190,59 +191,61 @@
                         </div>
                     </div>
                 </li>
-                <li id="page_reservation"><div class="rel"><span></span><span></span></div>
+                <li id="page_reservation" style="text-align:right"> <!-- RTL-->
+					<div class="rel"><span></span><span></span></div>
                      <a href="#!/page_home" class="closeBtn"><strong></strong><span>back to main<span>back to main</span></span></a>
                      <div class="container">
                         <div class="col2">
                             <div class="wrapper pad1">
-                                <h2>reservation</h2>
+                                <h2>הזמנות</h2>
                                 <div class="hr"></div>
-                                <div class="form1Holder">
+								<!-- RTL-->
+                                <div class="form1Holder" style="direction:rtl">
                                     <form id="form1">
                                         <label class="name">
-                                            <span>Your Name:</span>
+                                            <span>שם המטייל:</span>
                                   		    <input type="text" name="name">
                                         </label><br>
                                         <label class="email">
-                                            <span>E-Mail Address:</span>
+                                            <span>דואר אלקטרוני:</span>
                                             <input type="text" name="email">
                                     	</label><br>
                                    		<label class="phone">
-                                            <span>Home Phone:</span>
+                                            <span>טלפון בבית:</span>
                                             <input type="text" name="phone">
                                    		</label><br>
-                                        <span class="w1">Length of Stay:</span>
+                                        <span class="w1">משך השהייה:</span>
                                     	<select class="select_1" name="len" >
     										<option value="opt1">1</option>
     										<option value="opt2">2</option>
     										<option value="opt3">3</option>
     										<option value="opt4">4</option>
     									</select><br>
-                                        <span class="w1">Number in Party:</span>
+                                        <span class="w1">מספר אנשים:</span>
     									<select class="select_1" name="number" >
     										<option value="opt1">1</option>
     										<option value="opt2">2</option>
     										<option value="opt3">3</option>
     										<option value="opt4">4</option>
     									</select><br>
-                                        <span class="w1">Arrival Date:</span>
+                                        <span class="w1">תאריך הגעה:</span>
                                         <select class="select_2" name="date" >
-    										<option value="opt1">MONTH</option>
-    										<option value="opt2">JAN</option>
-    										<option value="opt3">FEB</option>
-    										<option value="opt4">MAR</option>
-    										<option value="opt5">APR</option>
-    										<option value="opt6">MAY</option>
-    										<option value="opt7">JUN</option>
-    										<option value="opt8">JUL</option>
-    										<option value="opt9">AUG</option>
-    										<option value="opt10">SEP</option>
-    										<option value="opt11">OCT</option>
-    										<option value="opt12">NOV</option>
-    										<option value="opt13">DEC</option>
+    										<option value="opt1">חודש</option>
+    										<option value="opt2">ינואר</option>
+    										<option value="opt3">פברואר</option>
+    										<option value="opt4">מרץ</option>
+    										<option value="opt5">אפריל</option>
+    										<option value="opt6">מאי</option>
+    										<option value="opt7">יוני</option>
+    										<option value="opt8">יולי</option>
+    										<option value="opt9">אוגודט</option>
+    										<option value="opt10">ספטמבר</option>
+    										<option value="opt11">אוקטובר</option>
+    										<option value="opt12">נובמבר</option>
+    										<option value="opt13">דצמבר</option>
     									</select>
                                         <select class="select_3" name="day" >
-    										<option value="opt1">DAY</option>
+    										<option value="opt1">יום</option>
     										<option value="opt2">1</option>
     										<option value="opt3">2</option>
     										<option value="opt4">3</option>
@@ -276,17 +279,17 @@
     										<option value="opt32">31</option>
     									</select>
                                         <select class="select_4" name="year" >
-    										<option value="opt1">YEAR</option>
+    										<option value="opt1">שנה</option>
     										<option value="opt2">2012</option>
     										<option value="opt3">2013</option>
     										<option value="opt4">2014</option>
     									</select><br>
                                         <label class="message">
-                                           <span class="w1">Additional<br>Comments: </span>
+                                           <span class="w1">תגובות <br> נוספות:</span>
                                     	   <textarea></textarea>
     									</label><br>
                                         <div class="searchButton">
-                                            <a href="#" class="clearBtn readMore2">Clear</a><a class="readMore2" onclick="document.getElementById('form1').submit()">Submit</a>
+                                            <a href="#" class="clearBtn readMore2">נקה</a><a class="readMore2" onclick="document.getElementById('form1').submit()">חפש</a>
                                         </div>
     								</form>
                                 </div>
@@ -384,7 +387,7 @@
         <!-- END CONTENT -->
         <!-- FOOTER -->
         <footer>            
-            <p>horizon &copy; 2012<span></span><a href="#!/page_privacy">Privacy Policy</a></p>
+            <p>Kadabra &copy; 2012<span></span><a href="#!/page_privacy">מדיניות פרטיות</a></p>
             <!-- {%FOOTER_LINK} -->
             <ul class="soc_links">
                 <li><a href="#"><img src="images/footer_icon1.png" alt></a></li>
