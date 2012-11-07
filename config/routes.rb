@@ -1,4 +1,12 @@
 Kadabra::Application.routes.draw do
+  get "main/flights"
+
+  get "main/hotels"
+
+  get "main/about"
+
+  get "main/backpackers"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
