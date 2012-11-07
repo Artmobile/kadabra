@@ -10,4 +10,7 @@ class MainController < ApplicationController
 
   def backpackers
   end
+
+  def home
+  end	  	
 end

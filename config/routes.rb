@@ -1,4 +1,6 @@
 Kadabra::Application.routes.draw do
+  get "main/home"
+
   get "main/flights"
 
   get "main/hotels"
