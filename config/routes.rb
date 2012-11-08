@@ -1,5 +1,5 @@
 Kadabra::Application.routes.draw do
-  get "main/home"
+  get "main/home" 
 
   get "main/flights"
 
@@ -58,7 +58,7 @@ Kadabra::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # root :to => 'main/home#!/page_about'
 
   # See how all your routes lay out with "rake routes"
 

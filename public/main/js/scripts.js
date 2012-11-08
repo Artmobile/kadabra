@@ -1,4 +1,5 @@
 include("js/jquery.color.js");
+
 include("js/jquery.backgroundpos.js");
 include("js/jquery.easing.js");
 include("js/jquery.mousewheel.js");
@@ -226,7 +227,7 @@ function ON_LOAD(){
     var nav = $('.menu');
     nav.navs({
 		useHash:true,
-        defHash: '#!/page_home',
+        defHash: '#!/page_about',
         hoverIn:function(li){
             if (!MSIE) {
                 $('>strong',li).stop(true).animate({'opacity':'1'},600,'easeOutBounce');
