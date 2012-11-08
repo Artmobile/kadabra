@@ -12,7 +12,10 @@ class ApplicationController < ActionController::Base
 	#   127.0.0.1 gr.application.local
 	# in your /etc/hosts file to try this out locally
 	def extract_locale_from_subdomain
-	  parsed_locale = request.subdomains.first
-	  I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
+	  	parsed_locale = request.subdomains.first
+		if parsed_locale.nil?
+			return nil
+		end	
+	  	I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
 	end	
 end
