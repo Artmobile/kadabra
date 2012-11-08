@@ -45,8 +45,7 @@
                         <li><a href="#!/page_tours">חבילות</a><strong></strong><span></span><em></em></li>
                         <li><a href="#!/page_hotels">בתי מלון</a><strong></strong><span></span><em></em></li>
                         <li><a href="#!/page_mail">אנשי קשר</a><strong></strong><span></span><em></em></li>
-                        <li><a href="#!/page_reservation"><%=t :orders %></a><strong></strong><span></span><em></em></li>
-                        <!--<li><a href="#!/page_reservation">הזמנות</a><strong></strong><span></span><em></em></li>-->
+                        <li><a href="#!/page_reservation"><%=t :res_reservation %></a><strong></strong><span></span><em></em></li>
 
                 	</ul>
            	    </nav>
@@ -193,44 +192,44 @@
                         </div>
                     </div>
                 </li>
-                <li id="page_reservation" style="text-align:right"> <!-- RTL-->
+                <li id="page_reservation" style="text-align:<%=t :rtl_text_align %>"> <!-- RTL-->
 					<div class="rel"><span></span><span></span></div>
                      <a href="#!/page_home" class="closeBtn"><strong></strong><span>back to main<span>back to main</span></span></a>
                      <div class="container">
                         <div class="col2">
                             <div class="wrapper pad1">
-                                <h2>הזמנות</h2>
+                                <h2><%=t :res_reservation %></h2>
                                 <div class="hr"></div>
 								<!-- RTL-->
-                                <div class="form1Holder" style="direction:rtl">
+                                <div class="form1Holder" style="direction:<%=t :rtl_direction %>">
                                     <form id="form1">
                                         <label class="name">
-                                            <span>שם המטייל:</span>
+                                            <span><%=t :res_your_name %></span>
                                   		    <input type="text" name="name">
                                         </label><br>
                                         <label class="email">
-                                            <span>דואר אלקטרוני:</span>
+                                            <span><%=t :res_email %></span>
                                             <input type="text" name="email">
                                     	</label><br>
                                    		<label class="phone">
-                                            <span>טלפון בבית:</span>
+                                            <span><%=t :res_home_phone %></span>
                                             <input type="text" name="phone">
                                    		</label><br>
-                                        <span class="w1">משך השהייה:</span>
+                                        <span class="w1"><%=t :res_len_stay %></span>
                                     	<select class="select_1" name="len" >
     										<option value="opt1">1</option>
     										<option value="opt2">2</option>
     										<option value="opt3">3</option>
     										<option value="opt4">4</option>
     									</select><br>
-                                        <span class="w1">מספר אנשים:</span>
+                                        <span class="w1"><%=t :res_number_in_party %></span>
     									<select class="select_1" name="number" >
     										<option value="opt1">1</option>
     										<option value="opt2">2</option>
     										<option value="opt3">3</option>
     										<option value="opt4">4</option>
     									</select><br>
-                                        <span class="w1">תאריך הגעה:</span>
+                                        <span class="w1"><%=t :res_arrival_date %></span>
                                         <select class="select_2" name="date" >
     										<option value="opt1">חודש</option>
     										<option value="opt2">ינואר</option>
@@ -287,11 +286,11 @@
     										<option value="opt4">2014</option>
     									</select><br>
                                         <label class="message">
-                                           <span class="w1">תגובות <br> נוספות:</span>
+                                           <span class="w1"><%=t :res_additional_comments %></span>
                                     	   <textarea></textarea>
     									</label><br>
                                         <div class="searchButton">
-                                            <a href="#" class="clearBtn readMore2">נקה</a><a class="readMore2" onclick="document.getElementById('form1').submit()">חפש</a>
+                                            <a href="#" class="clearBtn readMore2"><%=t :res_clear %></a><a class="readMore2" onclick="document.getElementById('form1').submit()"><%=t :res_search %></a>
                                         </div>
     								</form>
                                 </div>

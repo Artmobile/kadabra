@@ -2,4 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  oreers: "Orders"
+  # RTL stuff	
+  rtl_text_align: "left"
+  rtl_text_align_reverse: "right"
+  rtl_direction: "ltr"
+
+  # General String
+  res_reservation: "Reservation"
+  res_email: "E-Mail Address"
+  res_your_name: "Your Name"
+  res_home_phone: "Home Phone"
+  res_len_stay: "Length of stay"
+  res_number_in_party: "Number in party"
+  res_arrival_date: "Arrival Date"
+  res_additional_comments: "Additional comments"
+  res_clear: "Clear"
+  res_search: "Search"
+
+

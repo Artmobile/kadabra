@@ -2,4 +2,19 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 he:
-  orders: "הזמנות"
+  # RTL stuff	
+  rtl_text_align: "right"
+  rtl_text_align_reverse: "left"
+  rtl_direction: "rtl"
+
+  # Strings
+  res_reservation: "הזמנה"
+  res_email: "דואר אלקטרוני:"
+  res_your_name: "שם המטייל:"
+  res_home_phone: "טלפון בבית:"
+  res_len_stay: "משך השהייה:"
+  res_number_in_party: "מספר אנשים:"
+  res_arrival_date: "תאריך הגעה:"
+  res_additional_comments: "תגובות <br> נוספות:"
+  res_clear: "נקה"
+  res_search: "חפש"

@@ -2,5 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
-  orders: "Заказы"
+  # RTL stuff	
+  rtl_text_align: "left"
+  rtl_text_align_reverse: "right"
+  rtl_direction: "ltr"
+
+  # Strings
+  res_reservation: "бронирование"
+  res_email: "Адрес E-Mail"
+  res_your_name: "Ваше имя"
+  res_home_phone: "Домашний телефон"
+  res_len_stay: "Продолжительность пребывания"
+  res_number_in_party: "Количество человек"
+  res_arrival_date: "Дата прибытия"
+  res_additional_comments: "Дополнительные <br> комментарии"
+  res_clear: "Очистить"
+  res_search: "Искать"
+
 
