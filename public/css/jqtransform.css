@@ -149,7 +149,7 @@ cursor: pointer;
 	height: 18px;
 	overflow: hidden;
 	cursor:pointer;
-	padding: 3px 18px;
+	padding: 3px 2px;
 	color: #000;
 }
 .jqTransformSelectWrapper  a.jqTransformSelectOpen {

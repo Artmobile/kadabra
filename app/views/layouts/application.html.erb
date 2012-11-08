@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang=<%= I18n.locale%>>
 <head>
 	<meta charset="UTF-8">
 	<title></title>
@@ -10,6 +10,10 @@
     <link href='http://fonts.googleapis.com/css?family=Cabin:400' rel='stylesheet'>
     <link href='http://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet'>
 	<![endif]-->
+    <% if I18n.locale == :he %>
+        <link href="css/rtl.css" rel="stylesheet">
+    <% end %>    
+
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-1.7.2.min.js"></script>    
     <script src="js/scripts.js"></script>
@@ -22,6 +26,7 @@
 			<a href="//windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
 		</div>
 	<![endif]-->
+
 </head>
 <body>
 

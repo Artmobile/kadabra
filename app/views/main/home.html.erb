@@ -192,7 +192,7 @@
                         </div>
                     </div>
                 </li>
-                <li id="page_reservation" style="text-align:<%=t :rtl_text_align %>"> <!-- RTL-->
+                <li id="page_reservation"> 
 					<div class="rel"><span></span><span></span></div>
                      <a href="#!/page_home" class="closeBtn"><strong></strong><span>back to main<span>back to main</span></span></a>
                      <div class="container">
@@ -200,8 +200,7 @@
                             <div class="wrapper pad1">
                                 <h2><%=t :res_reservation %></h2>
                                 <div class="hr"></div>
-								<!-- RTL-->
-                                <div class="form1Holder" style="direction:<%=t :rtl_direction %>">
+                                <div class="form1Holder">
                                     <form id="form1">
                                         <label class="name">
                                             <span><%=t :res_your_name %></span>
@@ -231,22 +230,22 @@
     									</select><br>
                                         <span class="w1"><%=t :res_arrival_date %></span>
                                         <select class="select_2" name="date" >
-    										<option value="opt1">חודש</option>
-    										<option value="opt2">ינואר</option>
-    										<option value="opt3">פברואר</option>
-    										<option value="opt4">מרץ</option>
-    										<option value="opt5">אפריל</option>
-    										<option value="opt6">מאי</option>
-    										<option value="opt7">יוני</option>
-    										<option value="opt8">יולי</option>
-    										<option value="opt9">אוגודט</option>
-    										<option value="opt10">ספטמבר</option>
-    										<option value="opt11">אוקטובר</option>
-    										<option value="opt12">נובמבר</option>
-    										<option value="opt13">דצמבר</option>
+    										<option value="opt1"><%=t :res_month %></option>
+    										<option value="opt2"><%=t :res_jan %></option>
+    										<option value="opt3"><%=t :res_feb %></option>
+    										<option value="opt4"><%=t :res_mar %></option>
+    										<option value="opt5"><%=t :res_apr %></option>
+    										<option value="opt6"><%=t :res_may %></option>
+    										<option value="opt7"><%=t :res_jun %></option>
+    										<option value="opt8"><%=t :res_jul %></option>
+    										<option value="opt9"><%=t :res_aug %></option>
+    										<option value="opt10"><%=t :res_sep %></option>
+    										<option value="opt11"><%=t :res_oct %></option>
+    										<option value="opt12"><%=t :res_nov %></option>
+    										<option value="opt13"><%=t :res_dec %></option>
     									</select>
                                         <select class="select_3" name="day" >
-    										<option value="opt1">יום</option>
+    										<option value="opt1"><%=t :res_day %></option>
     										<option value="opt2">1</option>
     										<option value="opt3">2</option>
     										<option value="opt4">3</option>
@@ -280,7 +279,7 @@
     										<option value="opt32">31</option>
     									</select>
                                         <select class="select_4" name="year" >
-    										<option value="opt1">שנה</option>
+    										<option value="opt1"><%=t :res_year %></option>
     										<option value="opt2">2012</option>
     										<option value="opt3">2013</option>
     										<option value="opt4">2014</option>
@@ -397,5 +396,11 @@
         </footer>
         <!-- END FOOTER -->
     </div>
+
+    <!-- Override some attributes for the sake of RTL -->
+    <% if I18n.locale == :he %>
+        <link href="css/rtl.css" rel="stylesheet">
+    <% end %>    
+
 </body>
 </html>
