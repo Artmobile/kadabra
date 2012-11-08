@@ -1,4 +1,11 @@
 Kadabra::Application.routes.draw do
+
+  # config/routes.rb
+  scope "(:locale)", :locale => /he|ru|en/ do
+    match '/home' => 'main#home'      
+  end
+
+=begin  
   get "main/home" 
 
   get "main/flights"
@@ -8,7 +15,7 @@ Kadabra::Application.routes.draw do
   get "main/about"
 
   get "main/backpackers"
-
+=end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
