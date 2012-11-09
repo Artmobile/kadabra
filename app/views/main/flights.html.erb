@@ -1,2 +1,27 @@
-<h1>Main#flights</h1>
-<p>Find me in app/views/main/flights.html.erb</p>
+<div class="row">
+  <div class="four column centered" style="background-color: red; height:100px; bottom:0">
+    <%= render :partial => "header" %>
+  </div>
+</div>  
+
+<div class="row">
+  <div class="two columns" style="background-color: lightyellow;">
+    Left Padding  
+  </div>
+
+  <div class="eight columns">
+
+    <%= render :partial => "flight_control" %>
+
+  </div>  
+
+  <div class="two columns" style="background-color: lightyellow;">
+    Right Padding
+  </div>
+</div>
+
+<div class="row" >
+  <div class="four column centered" style="background-color: red; height:100px; bottom:0">
+    <%= render :partial => "footer" %>
+  </div>
+</div>  

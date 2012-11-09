@@ -2,7 +2,8 @@ Kadabra::Application.routes.draw do
 
   # config/routes.rb
   scope "(:locale)", :locale => /he|ru|en/ do
-    match '/home' => 'main#home'      
+    match '/home' => 'main#home' 
+    match '/flights' => 'main#flights'      
   end
 
 =begin  

@@ -12,12 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-
 // Include specfic component from foundation:
 // require foundation/jquery.foundation.tabs.js
-
 // Include entire foundation for development purpose
 //= require foundation
-
 // Include kendo
 //= require kendo.web.min.js
+;
