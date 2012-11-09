@@ -1,12 +1,31 @@
 <dl class="tabs contained">
-  <dt>Title 1</dt>
-  <dd class="active"><a href="#simpleContained1">Simple Tab 1</a></dd>
-  <dd class="hide-for-small"><a href="#simpleContained2">Simple Tab 2</a></dd>
-  <dt class="hide-for-small">Title 1</dt>
-  <dd class="hide-for-small"><a href="#simpleContained3">Simple Tab 3</a></dd>
+  <dt>&nbsp;&nbsp;</dt>
+  <dd class="active"><a href="#simpleContained1">Flights</a></dd>
+  <dd class="hide-for-small"><a href="#simpleContained2">Hotels</a></dd>
+  <dt class="hide-for-small">&nbsp;&nbsp;</dt>
+  <dd class="hide-for-small"><a href="#simpleContained3">AirBNB</a></dd>
 </dl>
 <ul class="tabs-content contained">
-  <li class="active" id="simpleContained1Tab">This is simple tab 1s content. Pretty neat, huh?</li>
-  <li id="simpleContained2Tab">This is simple tab 2s content. Now you see it!</li>
-  <li id="simpleContained3Tab">This is simple tab 3s content.</li>
+  	<li class="active" id="simpleContained1Tab">
+		<form>
+		  <label>This is a label.</label>
+		  <input type="text" placeholder="Standard Input" />
+		  <label>Address</label>
+		  <input type="text" class="twelve" placeholder="Street" />
+		  <div class="row">
+		    <div class="six columns">
+		      <input type="text" placeholder="City" />
+		    </div>
+		    <div class="three columns">
+		      <input type="text" placeholder="State" />
+		    </div>
+		    <div class="three columns">
+		      <input type="text" placeholder="ZIP" />
+		    </div>
+		  </div>
+		  <textarea placeholder="Message"></textarea>
+		</form>
+	</li>
+	<li id="simpleContained2Tab">This is simple tab 2s content. Now you see it!</li>
+	<li id="simpleContained3Tab">This is simple tab 3s content.</li>
 </ul>

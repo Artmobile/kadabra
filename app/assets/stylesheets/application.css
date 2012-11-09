@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require styles.scss
  *= require kendo/kendo.metro.min.css
  *= require kendo/kendo.common.min.css
  */

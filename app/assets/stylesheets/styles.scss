@@ -1,0 +1,70 @@
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border-radius-side($side, $radius: 10px) {
+  border-#{$side}-radius: $radius;
+  -moz-border-radius-#{$side}: $radius;
+  -webkit-border-#{$side}-radius: $radius;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;       
+          box-shadow: $shadow;
+}
+
+html {
+	height: 100%;
+}
+
+body { 
+	font-family: helvetica, arial, verdana, sans-serif;
+	font-size: 13px;
+	overflow-x: hidden;
+	_overflow-x: visible; 
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 1;
+	padding: 0px; 
+	margin: 0px; 
+	height: 100%; 
+	text-align: center; 
+}
+
+div#wrapper {
+	padding-top:10px;
+	margin: auto;	 
+   	min-height: 500px; 
+   	height:auto !important; 
+   	height: 500px; 
+}
+
+div.rounded {
+}
+
+.tabs {
+	border-bottom:0
+}
+
+ul.tabs-content.contained > li  {
+	border:0;	
+}
+
+.tabs dd, active {
+	background-color: whitesmoke;
+}
+
+.tabs-content {
+	@include box-shadow(#AAA 0px 3px 3px 0px);
+	height:350px;
+	background-color: whitesmoke;
+	border:3px solid whitesmoke; 
+	@include border-radius(16px);
+}
