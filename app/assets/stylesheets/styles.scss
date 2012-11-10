@@ -68,3 +68,9 @@ ul.tabs-content.contained > li  {
 	border:3px solid whitesmoke; 
 	@include border-radius(16px);
 }
+
+ #flight-class h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 25px 0 8px 0;
+}

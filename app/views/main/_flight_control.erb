@@ -1,31 +1,182 @@
-<dl class="tabs contained">
-  <dt>&nbsp;&nbsp;</dt>
-  <dd class="active"><a href="#simpleContained1">Flights</a></dd>
-  <dd class="hide-for-small"><a href="#simpleContained2">Hotels</a></dd>
-  <dt class="hide-for-small">&nbsp;&nbsp;</dt>
-  <dd class="hide-for-small"><a href="#simpleContained3">AirBNB</a></dd>
-</dl>
-<ul class="tabs-content contained">
-  	<li class="active" id="simpleContained1Tab">
-		<form>
-		  <label>This is a label.</label>
-		  <input type="text" placeholder="Standard Input" />
-		  <label>Address</label>
-		  <input type="text" class="twelve" placeholder="Street" />
-		  <div class="row">
-		    <div class="six columns">
-		      <input type="text" placeholder="City" />
-		    </div>
-		    <div class="three columns">
-		      <input type="text" placeholder="State" />
-		    </div>
-		    <div class="three columns">
-		      <input type="text" placeholder="ZIP" />
-		    </div>
-		  </div>
-		  <textarea placeholder="Message"></textarea>
-		</form>
-	</li>
-	<li id="simpleContained2Tab">This is simple tab 2s content. Now you see it!</li>
-	<li id="simpleContained3Tab">This is simple tab 3s content.</li>
-</ul>
+			<script type="text/javascript">
+			$(function(){
+				var window = $("#window");
+
+
+                if (!window.data("kendoWindow")) {
+                    window.kendoWindow({
+                        title: "Schedule",
+                        modal: true,
+                    });
+                }				
+
+				$("#calendar").kendoCalendar({
+	                    culture: "he-IL"
+					});
+				$("#calendar1").kendoCalendar({
+                        culture: "he-IL"
+                });
+
+				function onclick() {
+					window.data("kendoWindow").center();
+					window.data("kendoWindow").open();
+			    }
+
+				$("#from").click(onclick);
+
+			    $("#to").click(onclick);
+
+				var data = [
+					{ text: "Economy", value: "1" },
+					{ text: "Standard", value: "2" },
+					{ text: "Premium", value: "3" },
+					{ text: "Business", value: "4" },
+					{ text: "First", value: "5" }
+				];
+
+				// create DropDownList from input HTML element
+				$("#color").kendoDropDownList({
+					dataTextField: "text",
+					dataValueField: "value",
+					dataSource: data,
+					index: 0,
+					animation: {
+					            open: {
+					                effects: "fadeIn",
+					                duration: 300,
+					                show: true
+					            }
+					         },									
+					change: onChange
+				});
+			});
+
+			function onChange() {
+			};
+		</script>
+
+
+		<dl class="tabs contained">
+			<dt>
+				&nbsp;&nbsp;
+			</dt>
+			<dd class="active">
+				<a href="#simpleContained1"><img src="/images/glyphish/gray/38-airplane.png" width="12"> &nbsp; Flights</a>
+			</dd>
+			<dd class="hide-for-small">
+				<a href="#simpleContained2"><img src="/images/glyphish/gray/53-house.png" width="12"> &nbsp; Hotels</a>
+			</dd>
+			<dt class="hide-for-small">
+				&nbsp;&nbsp;
+			</dt>
+			<dd class="hide-for-small">
+				<a href="#simpleContained3">AirBNB</a>
+			</dd>
+		</dl>
+		<ul class="tabs-content contained">
+			<li class="active" id="simpleContained1Tab">
+				<form class="custom">
+					<div class="row" id="wherewhen">
+						<div class="twelve columns centered">
+							<div class="six columns" style="text-align:left">
+								<label>From</label>
+								<div class="row" >
+									<div class="ten mobile-three columns">
+										<input type="text" placeholder="Place or airport">
+									</div>
+									<div class="two mobile-one columns" style="padding:0 0">
+										<a id="from" class="postfix button" style="width:45px; font-size: 0.7em">11 Nov</a>
+									</div>
+								</div>
+							</div>
+							<div class="six columns" style="text-align:left">
+								<label>To</label>
+								<div class="row">
+									<div class="ten mobile-three columns">
+										<input type="text" placeholder="Place or airport">
+									</div>
+									<div class="two mobile-one columns" style="padding:0 0">
+										<a id="to" class="postfix button" style="width:45px; font-size: 0.7em">14 Nov</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						&nbsp;
+					</div>
+					<div class="row" id="who" >
+						<div class="nine columns">
+							<div class="row">
+								<div class="four columns" style="display:table;height:55px;">
+									<div style="display:table-row;text-align:middle">
+										<h5 class="subheader">Adults</h5>
+										<h5 class="subheader">1</h5>
+									</div>
+									<div style="display: table-row;text-align:-middle; height:55px;">
+										<div style="display:table-cell; vertical-align: bottom;">
+											<img src="/images/glyphish/gray/31-circle-plus.png" width="17"> <img src="/images/glyphish/gray/253-person.png" width="45"> <img src="/images/glyphish/gray/22-circle-minus.png" width="17">
+										</div>
+									</div>
+								</div>
+								<div class="four columns" style="display:table;height:55px;">
+									<div style="display:table-row;text-align:middle">
+										<h5 class="subheader">Children</h5>
+										<h5 class="subheader">0</h5>
+									</div>
+									<div style="display: table-row;text-align:-middle; height:55px;">
+										<div style="display:table-cell; vertical-align: bottom;">
+											<img src="/images/glyphish/gray/31-circle-plus.png" width="17"> <img src="/images/glyphish/gray/253-person.png" width="35"> <img src="/images/glyphish/gray/22-circle-minus.png" width="17">
+										</div>
+									</div>
+								</div>
+								<div class="four columns" style="display:table;height:55px;">
+									<div style="display:table-row;text-align:middle">
+										<h5 class="subheader">Infants</h5>
+										<h5 class="subheader">0</h5>
+									</div>
+									<div style="display: table-row;text-align:-middle; height:55px;">
+										<div style="display:table-cell; vertical-align: bottom;">
+											<img src="/images/glyphish/gray/31-circle-plus.png" width="17"> <img src="/images/glyphish/gray/76-baby.png" height="35"> <img src="/images/glyphish/gray/22-circle-minus.png" width="17">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row"></div>
+						</div>
+						<div class="three columns" style="text-align:left">
+							<label for="checkbox1"><input type="checkbox" id="checkbox1"> One way only</label> 
+							<label for="checkbox2"><input type="checkbox" id="checkbox2" checked>Flexible dates</label> 
+							<label for="checkbox3"><input type="checkbox" checked id="checkbox3"> Open jaw</label> 
+							<label for="checkbox3"><input type="checkbox" checked id="checkbox32"> Direct only</label> 
+						</div>
+					</div>	
+					<div class="row" style="padding-top:30px;"> 
+						<div class="two columns" >
+							<span><h4 class="subheader">Class: </h4>
+						</div>
+
+						<div class="two columns" style="padding-top:17px">
+							<input id="color" value="1" style="width:100px; text-align:left"> </span>
+						</div>
+						<div class="five columns">
+						</div>
+
+						<div class="three columns">
+							<a class="radius button" href="#">Begin Search</a>						
+						</div>
+					</div>
+				</form>
+			</li>
+			<li id="simpleContained2Tab">This is simple tab 2s content. Now you see it!
+			</li>
+			<li id="simpleContained3Tab">This is simple tab 3s content.
+			</li>
+		</ul>
+
+<div id="window" style="display:none">
+	<span id="calendar"></span>
+	<span id="calendar1"></span>	
+</div>
+
+	

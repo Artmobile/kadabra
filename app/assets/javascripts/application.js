@@ -21,3 +21,4 @@
 
 // Include kendo
 //= require kendo.web.min.js
+//= require kendo.culture.he-IL.min.js
