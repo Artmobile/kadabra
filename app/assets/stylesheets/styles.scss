@@ -69,7 +69,7 @@ ul.tabs-content.contained > li  {
 
 .tabs-content {
 	@include box-shadow(#AAA 0px 3px 3px 0px);
-	height:350px;
+	/*height:350px;*/
 	background-color: whitesmoke;
 	border:3px solid whitesmoke; 
 	@include border-radius(16px);

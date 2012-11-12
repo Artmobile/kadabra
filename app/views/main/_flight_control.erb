@@ -26,7 +26,7 @@
 
 			    $("#to").click(onclick);
 
-				var data = [
+				var classes = [
 					{ text: "Economy", value: "1" },
 					{ text: "Standard", value: "2" },
 					{ text: "Premium", value: "3" },
@@ -34,11 +34,20 @@
 					{ text: "First", value: "5" }
 				];
 
+				var persons = [
+					{ text: "Adult", value: "1" },
+					{ text: "Child", value: "2" },
+					{ text: "Senior", value: "3" },
+					{ text: "Infant", value: "4" },
+					{ text: "Lap Infant", value: "5" }
+				];
+
+
 				// create DropDownList from input HTML element
-				$("#color").kendoDropDownList({
+				$("#classes").kendoDropDownList({
 					dataTextField: "text",
 					dataValueField: "value",
-					dataSource: data,
+					dataSource: classes,
 					index: 0,
 					animation: {
 					            open: {
@@ -49,6 +58,20 @@
 					         },									
 					change: onChange
 				});
+
+				var personsWindow = $("#personsWindow");
+
+				if (!personsWindow.data("kendoWindow")) {
+                    personsWindow.kendoWindow({
+                        //title: "Select passengers",
+                        modal: true,
+                    });
+                }	
+				$('#txtPersons').click(function(){
+					personsWindow.data("kendoWindow").center();	
+					personsWindow.data("kendoWindow").open();	
+				});
+
 			});
 
 			function onChange() {
@@ -88,6 +111,12 @@
 										<a id="from" class="postfix button" style="width:45px; font-size: 0.7em">11 Nov</a>
 									</div>
 								</div>
+								<div class="row">
+									<div class="twelve columns">
+										<span id="calendar" style="width:100%"></span>
+									</div>
+								</div>
+
 							</div>
 							<div class="six columns" style="text-align:left">
 								<label>To</label>
@@ -99,13 +128,15 @@
 										<a id="to" class="postfix button" style="width:45px; font-size: 0.7em">14 Nov</a>
 									</div>
 								</div>
+								<div class="row">
+									<div class="twelve columns">
+										<span id="calendar1" style="width:100%"></span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						&nbsp;
-					</div>
-					<div class="row" id="who" >
+					<div class="row" id="who" style="display:none">
 						<div class="nine columns">
 							<div class="row">
 								<div class="four columns" style="display:table;height:55px;">
@@ -151,18 +182,31 @@
 							<label for="checkbox3"><input type="checkbox" checked id="checkbox32"> Direct only</label> 
 						</div>
 					</div>	
-					<div class="row" style="padding-top:30px;"> 
+					<div class="row" > 
 						<div class="two columns" >
-							<span><h4 class="subheader">Class: </h4>
+							<span><h4 style="text-align:right" class="subheader">Class: </h4>
 						</div>
-
 						<div class="two columns" style="padding-top:17px">
-							<input id="color" value="1" style="width:100px; text-align:left"> </span>
+							<input id="classes" value="1" style="width:100px; text-align:left"> </span>
 						</div>
 						<div class="five columns">
 						</div>
 
-						<div class="three columns">
+						<div class="three columns" style="padding-top:17px">
+						</div>
+					</div>
+
+					<div class="row" > 
+						<div class="two columns" >
+							<span><h4 style="text-align:right" class="subheader">Passengers: </h4>
+						</div>
+						<div class="two columns" style="padding-top:17px">
+							<input type="text" placeholder="1 Person" readonly="readonly" id="txtPersons">
+						</div>
+						<div class="five columns">
+						</div>
+
+						<div class="three columns" style="padding-top:17px">
 							<a class="radius button" href="#">Begin Search</a>						
 						</div>
 					</div>
@@ -179,4 +223,30 @@
 	<span id="calendar1"></span>	
 </div>
 
+<div id="personsWindow" style="display:none; width:200px">
+	<div style="text-align:left; width:100%">The displayed prices are based on the latest search results on the site. The price is a subject to change. Please choose the number of passengers</div>
+	<table cellpaddin="3" cellspacing="0" style="border:0;width:100%; background-color:transparent">
+		<tr>
+			<td>Adults:</td>
+			<td><select><option>0</option><option selected>1</option><option>2</option><select><option>3</option><option>4</option><option>5</option><option>6</option></select></td>
+		</tr>
+		<tr>
+			<td>Child:</td>
+			<td><select><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><select><option>5</option><option>6</option></select></td>
+		</tr>
+		<tr>
+			<td>Senior:</td>
+			<td><select><<option>0</option>option>1</option><option>2</option><option>3</option><option>4</option><select><option>5</option><option>6</option></select></td>
+		</tr>
+		<tr>
+			<td>Infants:</td>
+			<td><select><option>0</option><option>1</option><option>2</option>option>3</option><option>4</option><select><option>5</option><option>6</option></select></td>
+		</tr>
+		<tr>
+			<td>Lap Infants:</td>
+			<td><select><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><select><option>5</option><option>6</option></select></td>
+		</tr>
+
+	</table>
+</div>
 	
