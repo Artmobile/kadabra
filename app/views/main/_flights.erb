@@ -1,11 +1,29 @@
 <script>
 	
 	$(function(){
+		var window = $("#window");
+
+        if (!window.data("kendoWindow")) {
+            window.kendoWindow({
+                width: "936px",
+                height: "617px", 
+                modal:true
+            });
+        }
+		function onclick() {
+			window.data("kendoWindow").center();
+			window.data("kendoWindow").open();
+	    }
+
+		$("#search").click(onclick);
+
+
 		$("#datepickerFrom").kendoDatePicker({culture:"<%= I18n.locale %>"});
 		$("#datepickerTo").kendoDatePicker({culture:"<%= I18n.locale %>"});
 		$("#numAdults").kendoNumericTextBox({format: "0", min:1, max:6});
 		$("#numChildren").kendoNumericTextBox({format: "0", min:0, max:6});
 		$("#numInfants").kendoNumericTextBox({format: "0", min:0, max:6});
+
 		var classes = [
 			{ text: "<%=t :travel_class_economy%>", value: "1" },
 			{ text: "<%=t :travel_class_standard%>", value: "2" },
@@ -13,6 +31,7 @@
 			{ text: "<%=t :travel_class_business%>", value: "4" },
 			{ text: "<%=t :travel_class_first%>", value: "5" }
 		];
+
 		$("#classes").kendoDropDownList({
 			dataTextField: "text",
 			dataValueField: "value",
@@ -32,7 +51,6 @@
 </script>
 
 <div>
-	<form class="custom">
 	<table class="table-wrap <% if I18n.locale == :he %>k-rtl<% end %>">
 		<tr>
 			<td colspan="3">
@@ -47,26 +65,28 @@
 		<tr>
 			<td width="138px"><label class="biglabel" style="padding-top:5px;"><%=t :travel_from%></label></td>
 			<td ><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
-			<td><input  id="datepickerFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+			<td class="push-left"><input id="datepickerFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
 		</tr>	
 		<tr>
 			<td width="138px"><label class="biglabel" style="padding-top:5px;"><%=t :travel_to%></label></td>
 			<td ><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
-			<td ><input  id="datepickerTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+			<td class="push-left"><input id="datepickerTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
 		</tr>	
 		<tr><td colspan="3">
 			<table class="table-wrap"><tr>
-				<td><%=t :travel_adults%><br><input style="margin-top:8px;width:54px" id="numAdults" value="1" /></td>
-				<td><%=t :travel_children%><br><input style="margin-top:8px;width:54px" id="numChildren" value="0" /></td>
-				<td><%=t :travel_infants%><br><input style="margin-top:8px;width:54px" id="numInfants" value="0" /></td>
-				<td><%=t :travel_class%><br><input id="classes" value="1" style="margin-top:10px;width:250px; text-align:left"> </span></td>
+				<td class="push-left"><%=t :travel_adults%><br><input style="margin-top:8px;width:54px" id="numAdults" value="1" /></td>
+				<td class="push-left"><%=t :travel_children%><br><input style="margin-top:8px;width:54px" id="numChildren" value="0" /></td>
+				<td class="push-left"><%=t :travel_infants%><br><input style="margin-top:8px;width:54px" id="numInfants" value="0" /></td>
+				<td class="push-left"><%=t :travel_class%><br><input id="classes" value="1" style="margin-top:10px;width:250px; text-align:left"> </span></td>
 			</table>	
 		</td></tr>	
 		<tr>
 			<td colspan="2"></td>
-			<td><a class="radius button" href="#"><%=t :travel_search_flight%></a></td>						
+			<td><a id="search" class="radius button" href="#"><%=t :travel_search_flight%></a></td>						
 		</tr>	
-
 	</table>	
-</form>
 </div>
+
+<div id="window" style="display:none;height:617px;border:0px">
+	<%= render :partial => "sample" %>
+</div>	
