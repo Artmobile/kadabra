@@ -10,7 +10,8 @@
  *
  *= require_self
  *= require foundation_and_overrides
- *= require kendo/kendo.uniform.min.css
+ *= require kendo/kendo.blueopal.min.css
  *= require kendo/kendo.common.min.css
+ *= require kendo/kendo.rtl.min.css
  *= require styles.scss
  */

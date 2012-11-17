@@ -48,7 +48,6 @@ body {
 	padding: 0px; 
 	margin: 0px; 
 	height: 100%; 
-	text-align: center; 
 }
 
 div#wrapper {
@@ -57,6 +56,10 @@ div#wrapper {
    	min-height: 500px; 
    	height:auto !important; 
    	height: 500px; 
+}
+
+ul#tabzone {
+	padding: 0px 25px;
 }
 
 .tabs {
@@ -71,30 +74,6 @@ ul.tabs-content.contained > li  {
 	background-color: whitesmoke;
 }
 
-.voodoo {
-	@include box-shadow(#AAA 0px 3px 3px 0px);
-	background-image:url('light_wool.png');
-	height:350px;
-	background-color: whitesmoke;
-	border:3px solid whitesmoke; 
-	@include border-radius(16px);
-
-}
-.tabs-content {
-	@include box-shadow(#AAA 0px 3px 3px 0px);
-	background-image:url('light_wool.png');
-	height:350px;
-	background-color: whitesmoke;
-	border:3px solid whitesmoke; 
-	@include border-radius(16px);
-}
-
- #flight-class h3 {
-    font-size: 1em;
-    font-weight: bold;
-    margin: 25px 0 8px 0;
-}
-
 img.monochrome {
 	@include monochrome();
 }
@@ -105,15 +84,9 @@ img.monochrome {
 	font-family: helvetica, arial, verdana, sans-serif;
 	border: 1px solid transparent;	
 	text-align: right;
+	padding-top:12px;
 }
 
-.top-padded {
-	padding-top:8px;
-}
-
-div#classcolumn,.dropdown {
-	width: 100px;
-}
 
 /* <KENDO OVERRIDES> */
 div.k-tabstrip
@@ -135,23 +108,73 @@ div.k-tabstrip .k-content
 div.k-content {
 	@include box-shadow(#AAA 0px 3px 3px 0px);
 	background-image:url('light_wool.png');
-	height:350px;
+	height:400px;
 	background-color: whitesmoke;
 	border:3px solid whitesmoke; 
 	@include border-radius(16px);
 
 }
+
+.k-tabstrip-items .k-item {
+	list-style-type: none;
+	display: inline-block;
+	position: relative;
+	border-style: solid;
+	border-width: 5px 1px 0;
+	margin: 0 -1px 0 0;
+	border-top-color:lightblue;
+	padding: 0;
+	vertical-align: top;
+}
+
 /* </KENDO OVERRIDES> */
 
 
 .table-wrap {
-	@extend .k-rtl;
 	border:0px;
 	width:100%;
 	background-color: transparent;
+}
+
+.table-wrap tr:nth-child(odd)    { background-color:transparent; }
+.table-wrap tr:nth-child(even)    { background-color:transparent; }
+
+
+.direction-cell {
+	font-size: 0.8em;
+}
+
+.flight-option {
+	max-width: 15px;
+}
+
+table tr td tbody {
+	@extend %reset;
+}
+
+/* -- DEPRECATED
+
+.top-padded {
+	padding-top:8px;
+}
+
+div#classcolumn,.dropdown {
+	width: 100px;
+}
+
+
+.tabs-content {
+	@include box-shadow(#AAA 0px 3px 3px 0px);
+	background-image:url('light_wool.png');
+	height:350px;
+	background-color: whitesmoke;
+	border:3px solid whitesmoke; 
 	@include border-radius(16px);
 }
 
-table, tr, td, tbody{
-	background-image:url('light_wool.png');
+ #flight-class h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 25px 0 8px 0;
 }
+*/

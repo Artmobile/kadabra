@@ -1,33 +1,72 @@
 <script>
 	
 	$(function(){
-		$("#datepickerFrom").kendoDatePicker({culture:"he-IL"});
-		$("#datepickerTo").kendoDatePicker();
+		$("#datepickerFrom").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#datepickerTo").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#numAdults").kendoNumericTextBox({format: "0", min:1, max:6});
+		$("#numChildren").kendoNumericTextBox({format: "0", min:0, max:6});
+		$("#numInfants").kendoNumericTextBox({format: "0", min:0, max:6});
+		var classes = [
+			{ text: "<%=t :travel_class_economy%>", value: "1" },
+			{ text: "<%=t :travel_class_standard%>", value: "2" },
+			{ text: "<%=t :travel_class_premium%>", value: "3" },
+			{ text: "<%=t :travel_class_business%>", value: "4" },
+			{ text: "<%=t :travel_class_first%>", value: "5" }
+		];
+		$("#classes").kendoDropDownList({
+			dataTextField: "text",
+			dataValueField: "value",
+			dataSource: classes,
+			index: 0,
+			animation: {
+			            open: {
+			                effects: "fadeIn",
+			                duration: 300,
+			                show: true
+			            }
+			         }									
+		});
+
 	})
 
 </script>
 
-<div style="padding-top:25px;">
-	<table class="table-wrap k-rtl">
+<div>
+	<form class="custom">
+	<table class="table-wrap <% if I18n.locale == :he %>k-rtl<% end %>">
 		<tr>
-			<td width="48px"><label class="biglabel"><%=t :res_reservation %></label></td>
-			<td colspan="2">
-				<input name="radio1" type="radio" id="radio1">&nbsp;One way only&nbsp;&nbsp;&nbsp;&nbsp;
-				<input name="radio1" CHECKED type="radio" id="radio2">&nbsp;Flexible dates&nbsp;&nbsp;&nbsp;&nbsp;
-				<input name="radio1" type="radio" id="radio3">&nbsp;Direct only&nbsp;&nbsp;&nbsp;&nbsp;
-				<input name="radio1" type="radio" id="radio3">&nbsp;Open Jaw&nbsp;&nbsp;&nbsp;&nbsp;
+			<td colspan="3">
+				<table class="table-wrap"><tr >
+					<td class="direction-cell"><input name="radio1" type="radio" id="radio1">&nbsp;<%=t :travel_one_direction%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="direction-cell"><input name="radio1" CHECKED type="radio" id="radio2">&nbsp;<%=t :travel_flexible_dates%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="direction-cell"><input name="radio1" type="radio" id="radio3">&nbsp;<%=t :travel_direct_only%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="direction-cell"><input name="radio1" type="radio" id="radio3">&nbsp;<%=t :travel_multi_city%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<tr></table>
 			</td>
 		</tr>
 		<tr>
-			<td width="48px"><label class="biglabel" style="padding-top:5px;">From</label></td>
-			<td ><input type="text" placeholder="Place or airport"></td>
-			<td><input id="datepickerFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+			<td width="138px"><label class="biglabel" style="padding-top:5px;"><%=t :travel_from%></label></td>
+			<td ><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
+			<td><input  id="datepickerFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
 		</tr>	
 		<tr>
-			<td width="48px"><label class="biglabel" style="padding-top:5px;">To</label></td>
-			<td ><input type="text" placeholder="Place or airport"></td>
-			<td><input id="datepickerTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+			<td width="138px"><label class="biglabel" style="padding-top:5px;"><%=t :travel_to%></label></td>
+			<td ><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
+			<td ><input  id="datepickerTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+		</tr>	
+		<tr><td colspan="3">
+			<table class="table-wrap"><tr>
+				<td><%=t :travel_adults%><br><input style="margin-top:8px;width:54px" id="numAdults" value="1" /></td>
+				<td><%=t :travel_children%><br><input style="margin-top:8px;width:54px" id="numChildren" value="0" /></td>
+				<td><%=t :travel_infants%><br><input style="margin-top:8px;width:54px" id="numInfants" value="0" /></td>
+				<td><%=t :travel_class%><br><input id="classes" value="1" style="margin-top:10px;width:250px; text-align:left"> </span></td>
+			</table>	
+		</td></tr>	
+		<tr>
+			<td colspan="2"></td>
+			<td><a class="radius button" href="#"><%=t :travel_search_flight%></a></td>						
 		</tr>	
 
 	</table>	
+</form>
 </div>

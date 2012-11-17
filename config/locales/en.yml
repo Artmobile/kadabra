@@ -34,4 +34,27 @@ en:
   res_clear: "Clear"
   res_search: "Search"
 
+  travel_to: "To"
+  travel_from: "From"
+  travel_one_direction: "One way only"
+  travel_flexible_dates: "Flexible Dates" 
+  travel_multi_city: "Multi city"
+  travel_direct_only: "Direct Only"
+  travel_class: "Class"
+  travel_infants: "Infants"
+  travel_children: "Children"
+  travel_adults: "Adults"
+  travel_class_economy: "Economy"
+  travel_class_standard: "Standard"
+  travel_class_premium: "Premium"
+  travel_class_business: "Business"
+  travel_class_first: "First"
+  travel_search_flight: "Search Filght!"
+  travel_place_airport: "Place or airport"
+  travel_flights: "Flights"
+  travel_hotels: "Hotels"
+
+
+
+
 

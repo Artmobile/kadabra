@@ -1,14 +1,14 @@
 	<div >
 		<div id="tabstrip" class="tabstrip-override" >
-			<ul >
+			<ul id="tabzone">
 				<li class="k-state-active">
-					<img src="/images/glyphish/gray/38-airplane.png" width="16"> &nbsp; Flights
+					<span><img src="/images/glyphish/gray/38-airplane.png" width="16"> &nbsp; <%=t :travel_flights%></span>
 				</li>
-				<li>
-					<img src="/images/glyphish/gray/53-house.png" width="16"> &nbsp; Hotels
+				<li>	
+					<span><img src="/images/glyphish/gray/53-house.png" width="16"> &nbsp; <%=t :travel_hotels%></span>
 				</li>
 			</ul>
-			<div class="voodoo" style="border:0">
+			<div class="voodoo" >
 				<%= render :partial => "flights" %>
 			</div>
 
