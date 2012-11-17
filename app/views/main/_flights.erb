@@ -1,0 +1,33 @@
+<script>
+	
+	$(function(){
+		$("#datepickerFrom").kendoDatePicker({culture:"he-IL"});
+		$("#datepickerTo").kendoDatePicker();
+	})
+
+</script>
+
+<div style="padding-top:25px;">
+	<table class="table-wrap k-rtl">
+		<tr>
+			<td width="48px"><label class="biglabel"><%=t :res_reservation %></label></td>
+			<td colspan="2">
+				<input name="radio1" type="radio" id="radio1">&nbsp;One way only&nbsp;&nbsp;&nbsp;&nbsp;
+				<input name="radio1" CHECKED type="radio" id="radio2">&nbsp;Flexible dates&nbsp;&nbsp;&nbsp;&nbsp;
+				<input name="radio1" type="radio" id="radio3">&nbsp;Direct only&nbsp;&nbsp;&nbsp;&nbsp;
+				<input name="radio1" type="radio" id="radio3">&nbsp;Open Jaw&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td width="48px"><label class="biglabel" style="padding-top:5px;">From</label></td>
+			<td ><input type="text" placeholder="Place or airport"></td>
+			<td><input id="datepickerFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+		</tr>	
+		<tr>
+			<td width="48px"><label class="biglabel" style="padding-top:5px;">To</label></td>
+			<td ><input type="text" placeholder="Place or airport"></td>
+			<td><input id="datepickerTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+		</tr>	
+
+	</table>	
+</div>

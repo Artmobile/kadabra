@@ -1,4 +1,4 @@
-class MainController < FoundationController
+class MainController <  FoundationController
   def flights
   end
 
@@ -13,4 +13,7 @@ class MainController < FoundationController
 
   def home
   end	  	
+
+  def main
+  end  
 end

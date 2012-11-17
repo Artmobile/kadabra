@@ -1,0 +1,58 @@
+<script>
+	
+	$(function(){
+		$("#datepickerFrom").kendoDatePicker();
+		$("#datepickerTo").kendoDatePicker();
+	})
+
+</script>
+
+<form class="custom" >
+	<div class="row">
+		<div class="two columns" ><label class="biglabel">Direction</label></div>
+		<div class="two columns" style="padding-top:8px"><input name="radio1" type="radio" id="radio1">&nbsp;One way only</div>
+		<div class="two columns" style="padding-top:8px"><input name="radio1" CHECKED type="radio" id="radio2">&nbsp;Flexible dates</div>
+		<div class="two columns" style="padding-top:8px"><input name="radio1" type="radio" id="radio3">&nbsp;Direct only</div>
+		<div class="two columns" style="padding-top:8px"><input name="radio1" type="radio" id="radio3">&nbsp;Open Jaw</div>
+
+		<div class="one columns"></div>
+	</div>
+	<div class="row">&nbsp;</div>
+	
+	<div id="normal">
+		<div class="row">
+			<div class="two columns"><label class="biglabel">From</label></div>
+			<div class="seven columns"><input type="text" placeholder="Place or airport"></div>
+			<div class="two columns"><input id="datepickerFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></div>		
+			<div class="one columns"></div>
+		</div>		
+		<div class="row">
+			<div class="two columns"><label class="biglabel">To</label></div>
+			<div class="seven columns"><input type="text" placeholder="Place or airport"></div>
+			<div class="two columns"><input id="datepickerTo" type="text" placeholder="10/10/2011" style="width: 120px;height:27px"></div>
+			<div class="one columns"></div>
+		</div>		
+
+	</div>
+
+	<div class="row">
+		<div class="twelve columns centered" style="text-align:left">
+			<div class="two columns"></div>
+			<div class="two columns">Adults:<select><option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+			<div class="two columns">Children:<select><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+			<div class="two columns">infants:<select><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+			<div class="one"></div>
+			<div class="two columns" id="classcolumn">Class:<select ><option selected>Economy</option><option>Standard</option><option>Premium</option><option>Business</option><option>First</option></select></div>
+			<div class="one"></div>
+		</div>
+	</div>	
+
+	<div class="row">&nbsp;</div>
+
+	<div class="row">
+		<div class="nine columns"></div>
+		<div class="three columns">
+			<a class="radius button" href="#">Begin Search</a>						
+		</div>	
+	</div>	
+</form>
