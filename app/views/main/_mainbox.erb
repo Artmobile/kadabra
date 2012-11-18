@@ -2,13 +2,16 @@
 		<div id="tabstrip" class="tabstrip-override" >
 			<ul id="tabzone">
 				<li class="k-state-active">
-					<span><img src="/images/glyphish/gray/38-airplane.png" width="16"> &nbsp; <%=t :travel_flights%></span>
+					<span><img src="/images/glyphish/gray/38-airplane.png" width="15"> &nbsp; <%=t :travel_flights%></span>
 				</li>
 				<li>	
 					<span><img src="/images/glyphish/gray/53-house.png" width="16"> &nbsp; <%=t :travel_hotels%></span>
 				</li>
 				<li>	
-					<span><img src="/images/glyphish/gray/53-house.png" width="16"> &nbsp; <%=t :travel_packages%></span>
+					<span><img src="/images/glyphish/gray/24-gift.png" width="13"> &nbsp; <%=t :travel_packages%></span>
+				</li>
+				<li>	
+					<span><img src="/images/glyphish/gray/16-car.png" width="19"> &nbsp; <%=t :travel_cars%></span>
 				</li>
 			</ul>
 			<div class="voodoo" >
@@ -22,6 +25,11 @@
 			<div class="voodoo">
 				<%= render :partial => "packages" %>
 			</div>
+
+			<div class="voodoo">
+				<%= render :partial => "cars" %>
+			</div>
+
 		</div>
 	</div>
 	<div style="padding-top:10px">
