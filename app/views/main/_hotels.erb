@@ -1,0 +1,40 @@
+<script>
+	$(function(){
+		$("#dtHotelFrom").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#dtHotelTo").kendoDatePicker({culture:"<%= I18n.locale %>"});
+	});
+</script>
+
+<div>
+	<table class="table-wrap <% if I18n.locale == :he %>k-rtl<% end %>">
+		<tr>
+			<td width="138px"><label class="biglabel" style="padding-top:5px;">Destination</label></td>
+			<td width="270px"><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
+			<td class="push-left"><input id="dtHotelFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px">&nbsp;<span class="round secondary label">Checkin</span></td>
+		</tr>	
+		<tr>
+			<td colspan="2"></td>
+			<td class="push-left"><input id="dtHotelTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px">&nbsp; <span style="height:34px;padding-top:6px"><span class="round secondary label">Checkout</span></span></td>
+		</tr>			
+		<tr>
+			<td width="138px"><label class="biglabel" style="padding-top:5px;">Class</label></td>
+			<td ></td>
+			<td class="push-left"></td>
+		</tr>	
+		<tr>
+			<td width="138px"><label class="biglabel" style="padding-top:5px;">Rooms</label></td>
+			<td ></td>
+			<td class="push-left"></td>
+		</tr>	
+		<!-- Padding -->
+		<tr height="125px">
+			<td colspan="3"></td>
+		</tr>			
+		<!-- /Padding -->
+		<tr>
+			<td width="138px"></td>
+			<td></td>
+			<td ><a id="search" class="radius button" href="#"><%=t :travel_search_flight%></a></td>						
+		</tr>	
+	</table>	
+</div>	
