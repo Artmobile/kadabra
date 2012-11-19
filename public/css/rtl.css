@@ -1,11 +1,19 @@
-.jqTransformSelectWrapper div span, #form1 .jqTransformSelectWrapper div span {
-	padding: 3px 18px;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+	direction: rtl;		
 }
 
-#content>ul>li {
+.push-left {
 	text-align: right;
 }
+.push-right {
+	text-align: left;
+}
 
-div.form1Holder {
-	direction:rtl;
+
+.float-right {
+	float:left;
+}
+
+.float-left {
+	float:right;
 }
