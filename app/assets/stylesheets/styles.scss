@@ -133,6 +133,11 @@ div.k-content {
 	text-align: left;
 }
 
+.push-right {
+	text-align: right;
+}
+
+
 .float-right {
 	float:right;
 }
@@ -157,6 +162,12 @@ div.k-content {
 
 .flight-option {
 	max-width: 15px;
+}
+
+table.tight, table.tight tr, table.tight td{
+	padding:0;
+	border:0;
+	background: none transparent;
 }
 
 table tr td tbody {

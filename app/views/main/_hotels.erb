@@ -2,39 +2,120 @@
 	$(function(){
 		$("#dtHotelFrom").kendoDatePicker({culture:"<%= I18n.locale %>"});
 		$("#dtHotelTo").kendoDatePicker({culture:"<%= I18n.locale %>"});
+
+		var stars = [
+			{ text: "<%=t :travel_hotel_any%>", value: "1" },
+			{ text: "★", value: "2" },
+			{ text: "★★", value: "3" },
+			{ text: "★★★", value: "4" },
+			{ text: "★★★★", value: "5" },
+			{ text: "★★★★★", value: "6" }
+		];
+
+		var answer = [
+			{ text: "<%=t :res_yes%>", value: "1" },
+			{ text: "<%=t :res_no%>", value: "2" }
+		]
+
+		var room_types = [
+			{ text: "<%=t :room_type_single%>", value: "1" },
+			{ text: "<%=t :room_type_double%>", value: "2" },
+			{ text: "<%=t :room_type_triple%>", value: "3" },
+			{ text: "<%=t :room_type_quad%>", value: "4" },
+			{ text: "<%=t :room_type_twin%>", value: "5" },
+			{ text: "<%=t :room_type_double_single%>", value: "6" },
+			{ text: "<%=t :room_type_double_chld%>", value: "7" },
+			{ text: "<%=t :room_type_double_2chld%>", value: "8" },
+			{ text: "<%=t :room_type_double_3chld%>", value: "9" }
+		];
+
+		$("#num_rooms").kendoNumericTextBox({format: "0", min:1, max:10});
+
+		$("#room_types").kendoDropDownList({
+			dataTextField: "text",
+			dataValueField: "value",
+			dataSource: room_types,
+			index: 0,
+			animation: {
+			            open: {
+			                effects: "fadeIn",
+			                duration: 300,
+			                show: true
+			            }
+			         }									
+		});
+
+		$("#stars").kendoDropDownList({
+			dataTextField: "text",
+			dataValueField: "value",
+			dataSource: stars,
+			index: 0,
+			animation: {
+			            open: {
+			                effects: "fadeIn",
+			                duration: 300,
+			                show: true
+			            }
+			         }									
+		});
+
+		$("#avail").kendoDropDownList({
+			dataTextField: "text",
+			dataValueField: "value",
+			dataSource: answer,
+			index: 0,
+			animation: {
+			            open: {
+			                effects: "fadeIn",
+			                duration: 300,
+			                show: true
+			            }
+			         }									
+		});
+
+
 	});
 </script>
 
 <div>
 	<table class="table-wrap <% if I18n.locale == :he %>k-rtl<% end %>">
-		<tr>
-			<td width="138px"><label class="biglabel" style="padding-top:5px;">Destination</label></td>
-			<td width="270px"><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
-			<td class="push-left"><input id="dtHotelFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px">&nbsp;<span class="round secondary label">Checkin</span></td>
-		</tr>	
-		<tr>
-			<td colspan="2"></td>
-			<td class="push-left"><input id="dtHotelTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px">&nbsp; <span style="height:34px;padding-top:6px"><span class="round secondary label">Checkout</span></span></td>
-		</tr>			
-		<tr>
-			<td width="138px"><label class="biglabel" style="padding-top:5px;">Class</label></td>
-			<td ></td>
-			<td class="push-left"></td>
-		</tr>	
-		<tr>
-			<td width="138px"><label class="biglabel" style="padding-top:5px;">Rooms</label></td>
-			<td ></td>
-			<td class="push-left"></td>
-		</tr>	
-		<!-- Padding -->
-		<tr height="125px">
+		<tr height="65px">
 			<td colspan="3"></td>
 		</tr>			
+
+		<tr>
+			<td width="138px" ><label class="push-right biglabel" style="padding-top:5px;"><%=t :travel_hotel_city%></label></td>
+			<td width="270px">
+				<input type="text" placeholder="<%=t :travel_place_airport%>">
+				<span class="round secondary label"><%=t :travel_hotel_wherehint%></span>
+			</td>
+			<td class="push-left">
+				<input id="dtHotelFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px">&nbsp;<span class="round secondary label"><%=t :travel_hotel_checkin%></span>
+				<br><br>
+				<input id="dtHotelTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px">&nbsp; <span style="height:34px;padding-top:6px"><span class="round secondary label"><%=t :travel_hotel_checkout%></span></span>
+			</td>
+		</tr>	
+		<tr>
+			<td width="138px"><label class="push-right biglabel" style="padding-top:5px;"><%=t :travel_hotel_class%></label></td>
+			<td ><input id="stars" value="1"> </td>
+			<td class="push-left">
+					<input style="width:65px" id="avail" value="1">
+					<span class="round secondary label"><%=t :travel_hotel_avail%></span>
+			</td>
+		</tr>	
+		<tr>
+			<td width="138px"><label class="push-right biglabel" style="padding-top:5px;"><%=t :travel_hotel_rooms%></label></td>
+			<td ><input id="room_types" value="1"></td>
+			<td class="push-left">
+				<input style="width:65px" id="num_rooms" value="1" />
+				<span class="round secondary label"><%=t :travel_hotel_count%></span>
+			</td>
+		</tr>	
 		<!-- /Padding -->
 		<tr>
-			<td width="138px"></td>
-			<td></td>
-			<td ><a id="search" class="radius button" href="#"><%=t :travel_search_flight%></a></td>						
+			<td colspan="3" style="text-align:center"><a id="search" class="radius button" href="#"><%=t :travel_hotel_search%></a></td>						
 		</tr>	
+				<!-- Padding -->
+
 	</table>	
 </div>	

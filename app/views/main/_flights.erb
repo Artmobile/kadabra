@@ -20,6 +20,15 @@
 
 		$("#datepickerFrom").kendoDatePicker({culture:"<%= I18n.locale %>"});
 		$("#datepickerTo").kendoDatePicker({culture:"<%= I18n.locale %>"});
+
+		$("#datepickerFrom1").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#datepickerTo1").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#datepickerFrom2").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#datepickerTo2").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#datepickerFrom3").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#datepickerTo3").kendoDatePicker({culture:"<%= I18n.locale %>"});
+
+
 		$("#numAdults").kendoNumericTextBox({format: "0", min:1, max:6});
 		$("#numChildren").kendoNumericTextBox({format: "0", min:0, max:6});
 		$("#numInfants").kendoNumericTextBox({format: "0", min:0, max:6});
@@ -31,6 +40,26 @@
 			{ text: "<%=t :travel_class_business%>", value: "4" },
 			{ text: "<%=t :travel_class_first%>", value: "5" }
 		];
+
+		function adjustUx(){
+			if($("#rbOneDirection").prop("checked"))
+				$(".oneway").hide()
+			else $(".oneway").show()
+
+			if($("#rbOpenJaw").prop("checked")){
+				$(".single").hide();
+				$(".multi").show();
+			}	
+			else{
+				$(".single").show();
+				$(".multi").hide();
+			}
+		}
+
+
+		$("input[name='radio1']").change(adjustUx);
+
+
 
 		$("#classes").kendoDropDownList({
 			dataTextField: "text",
@@ -50,42 +79,84 @@
 
 </script>
 
-<div>
+<!-- Fix ZURB radio buton in RTL-->
+<% if I18n.locale == :he %>
+<style>
+	form.custom span.custom.radio.checked::before {
+		left:-3px;	
+	}
+</style>
+<%end%>
+
+<form class="custom">
 	<table class="table-wrap <% if I18n.locale == :he %>k-rtl<% end %>">
 		<tr>
 			<td colspan="3">
-				<table class="table-wrap"><tr >
-					<td class="direction-cell"><input name="radio1" type="radio" id="radio1">&nbsp;<%=t :travel_one_direction%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td class="direction-cell"><input name="radio1" CHECKED type="radio" id="radio2">&nbsp;<%=t :travel_flexible_dates%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td class="direction-cell"><input name="radio1" type="radio" id="radio3">&nbsp;<%=t :travel_direct_only%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td class="direction-cell"><input name="radio1" type="radio" id="radio3">&nbsp;<%=t :travel_multi_city%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<table class="tight table-wrap"><tr>
+					<td class="direction-cell"><input name="check1" type="checkbox" id="radio3">&nbsp;<%=t :travel_direct_only%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="direction-cell"><input name="check1" CHECKED type="checkbox" id="radio2">&nbsp;<%=t :travel_flexible_dates%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="direction-cell"><input name="radio1" CHECKED type="radio" id="radio3">&nbsp;<%=t :travel_regular%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="direction-cell"><input id="rbOneDirection" name="radio1" type="radio" id="radio1">&nbsp;<%=t :travel_one_direction%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="direction-cell"><input id="rbOpenJaw" name="radio1" type="radio" id="radio3">&nbsp;<%=t :travel_multi_city%>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				<tr></table>
 			</td>
 		</tr>
-		<tr>
+		<tr class="single" style="height:98px">
 			<td width="138px"><label class="biglabel" style="padding-top:5px;"><%=t :travel_from%></label></td>
 			<td width="270px"><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
 			<td class="push-left"><input id="datepickerFrom" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
 		</tr>	
-		<tr>
-			<td width="138px"><label class="biglabel" style="padding-top:5px;"><%=t :travel_to%></label></td>
-			<td ><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
-			<td class="push-left"><input id="datepickerTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
-		</tr>	
-		<tr><td colspan="3">
+		<tr class="single" style="height:98px">
+			<td width="138px"><label class="biglabel oneway" style="padding-top:5px;"><%=t :travel_to%></label></td>
+			<td ><input class="oneway" type="text" placeholder="<%=t :travel_place_airport%>"></td>
+			<td class="push-left">
+				<input class="oneway" id="datepickerTo" type="text" placeholder="10/10/2011" style="width:120px;height:27px">
+			</td>
+		</tr>
+
+		<tr class="multi" style="display:none;">
+			<td colspan="3" style="height:196px;">
+				<table class="tight" style="width:100%;">
+					<tr>
+						<th style="text-align:center" class="push-left"><%=t :travel_from%></th>
+						<th style="text-align:center" class="push-left"><%=t :travel_to%></th>
+						<th style="text-align:center" class="push-left"><%=t :travel_date%></th>
+					</tr>
+					<tr>
+						<td><input type="text" placeholder="<%=t :travel_place_airport%>"></td>	
+						<td><input type="text" placeholder="<%=t :travel_place_airport%>"></td>	
+						<td><input id="datepickerFrom1" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+					</tr>
+					<tr>
+						<td><input type="text" placeholder="<%=t :travel_place_airport%>"></td>	
+						<td><input type="text" placeholder="<%=t :travel_place_airport%>"></td>	
+						<td><input id="datepickerFrom2" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+
+					</tr>
+					<tr>
+						<td><input type="text" placeholder="<%=t :travel_place_airport%>"></td>	
+						<td><input type="text" placeholder="<%=t :travel_place_airport%>"></td>	
+						<td><input id="datepickerFrom3" type="text" placeholder="10/10/2011" style="width:120px;height:27px"></td>
+
+					</tr>
+
+				</table>	
+			</td>	
+		</tr>
+
+
+		<tr><td colspan="2" >
 			<table class="table-wrap"><tr>
 				<td class="push-left"><%=t :travel_adults%><br><input style="margin-top:8px;width:54px" id="numAdults" value="1" /></td>
 				<td class="push-left"><%=t :travel_children%><br><input style="margin-top:8px;width:54px" id="numChildren" value="0" /></td>
 				<td class="push-left"><%=t :travel_infants%><br><input style="margin-top:8px;width:54px" id="numInfants" value="0" /></td>
-				<td class="push-left"><%=t :travel_class%><br><input id="classes" value="1" style="margin-top:10px;width:250px; text-align:left"> </span></td>
+				<td class="push-left"><%=t :travel_class%><br><input id="classes" value="1" style="margin-top:10px;width:150px; text-align:left"> </span></td>
 			</table>	
-		</td></tr>	
-		<tr>
-			<td colspan="2"></td>
-			<td><a id="search" class="radius button" href="#"><%=t :travel_search_flight%></a></td>						
+		</td>
+		<td  style="vertical-align:bottom"><a id="search"   class="radius button" href="#"><%=t :travel_search_flight%></a></td>
 		</tr>	
 	</table>	
-</div>
+</form>
 
 <div id="window" style="display:none;height:617px;border:0px">
 	<%= render :partial => "sample" %>
