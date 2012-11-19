@@ -1,1 +1,52 @@
-Packages will come here
+<script>
+	$(function(){
+		var package_window = $("#package_window");
+
+        if (!package_window.data("kendoWindow")) {
+            package_window.kendoWindow({
+                width: "936px",
+                height: "617px", 
+                modal:true
+            });
+        }
+		function onclick() {
+			package_window.data("kendoWindow").center();
+			package_window.data("kendoWindow").open();
+	    }
+
+		$("#package_search").click(onclick);
+
+		$("#datepickerFrom_package").kendoDatePicker({culture:"<%= I18n.locale %>"});
+		$("#datepickerTo_package").kendoDatePicker({culture:"<%= I18n.locale %>"});
+
+
+	});
+</script>
+
+<form class="custom">
+	<table class="table-wrap <% if I18n.locale == :he %>k-rtl<% end %>">
+		<tr class="single" style="height:98px">
+			<td width="138px"><label class="biglabel" style="padding-top:5px;"><%=t :travel_from%></label></td>
+			<td width="270px"><input type="text" placeholder="<%=t :travel_place_airport%>"></td>
+			<td class="push-left">
+				<input id="datepickerFrom_package" type="text" placeholder="10/10/2011" style="width:120px;height:27px">
+				<span style="height:34px;padding-top:6px"><span class="round secondary label"><%=t :travel_hotel_checkin%></span></span>
+			</td>
+		</tr>	
+		<tr class="single" style="height:98px">
+			<td width="138px"><label class="biglabel oneway" style="padding-top:5px;"><%=t :travel_to%></label></td>
+			<td ><input class="oneway" type="text" placeholder="<%=t :travel_place_airport%>"></td>
+			<td class="push-left">
+				<input class="oneway" id="datepickerTo_package" type="text" placeholder="10/10/2011" style="width:120px;height:27px">
+				<span style="height:34px;padding-top:6px"><span class="round secondary label"><%=t :travel_hotel_checkout%></span></span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align:center"><a id="package_search" class="radius button" href="#"><%=t :travel_search_flight%></a></td>						
+		</tr>	
+	</table>	
+</form>
+
+<div id="package_window" style="display:none;height:617px;border:0px">
+	<%= render :partial => "package_sample" %>
+</div>	

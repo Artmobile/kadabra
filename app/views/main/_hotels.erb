@@ -1,5 +1,22 @@
 <script>
 	$(function(){
+		var hotel_window = $("#hotel_window");
+
+        if (!hotel_window.data("kendoWindow")) {
+            hotel_window.kendoWindow({
+                width: "936px",
+                height: "617px", 
+                modal:true
+            });
+        }
+		function onclick() {
+			hotel_window.data("kendoWindow").center();
+			hotel_window.data("kendoWindow").open();
+	    }
+
+		$("#hotel_search").click(onclick);
+
+
 		$("#dtHotelFrom").kendoDatePicker({culture:"<%= I18n.locale %>"});
 		$("#dtHotelTo").kendoDatePicker({culture:"<%= I18n.locale %>"});
 
@@ -113,9 +130,13 @@
 		</tr>	
 		<!-- /Padding -->
 		<tr>
-			<td colspan="3" style="text-align:center"><a id="search" class="radius button" href="#"><%=t :travel_hotel_search%></a></td>						
+			<td colspan="3" style="text-align:center"><a id="hotel_search" class="radius button" href="#"><%=t :travel_hotel_search%></a></td>						
 		</tr>	
 				<!-- Padding -->
 
 	</table>	
+</div>	
+
+<div id="hotel_window" style="display:none;height:617px;border:0px">
+	<%= render :partial => "hotel_sample" %>
 </div>	
